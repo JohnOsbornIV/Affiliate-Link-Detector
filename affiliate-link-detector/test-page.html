@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Affiliate Link Test Page</title>
+</head>
+<body>
+    <h1>Test Links for Affiliate Detection</h1>
+    
+    <h2>Amazon Links (Should be detected)</h2>
+    <p><a href="https://www.amazon.com/dp/B08N5WRWNW?tag=testaffiliate-20">Amazon with tag parameter</a></p>
+    <p><a href="https://amzn.to/3xyz123">Amazon shortened link</a></p>
+    <p><a href="https://www.amazon.com/gp/product/B08N5WRWNW?ref=as_li_tl&tag=affiliate-20">Amazon with ref parameter</a></p>
+    <p><a href="https://www.amazon.com/dp/B08N5WRWNW?pf_rd_p=123&pf_rd_r=456">Amazon with tracking parameters</a></p>
+    
+    <h2>Georiot Links (Should be detected)</h2>
+    <p><a href="https://geni.us/abc123">Georiot shortened link</a></p>
+    <p><a href="https://www.georiot.com/redirect?target=amazon.com">Direct Georiot link</a></p>
+    
+    <h2>CNA.st Links (Should be detected)</h2>
+    <p><a href="https://cna.st/p/abc123">CNA.st link</a></p>
+    
+    <h2>General Affiliate Links (Should be detected)</h2>
+    <p><a href="https://example.com/product?affiliate_id=test123">General affiliate parameter</a></p>
+    <p><a href="https://shareasale.com/r.cfm?b=123&u=456">ShareASale network</a></p>
+    <p><a href="https://bit.ly/3xyz789">Bitly shortened link</a></p>
+    
+    <h2>Tracking Links (Should be detected)</h2>
+    <p><a href="https://example.com/product?utm_source=affiliate&utm_medium=link">UTM tracking</a></p>
+    <p><a href="https://store.com/item?irclickid=abc123">Impact Radius tracking</a></p>
+    
+    <h2>Regular Links (Should NOT be detected)</h2>
+    <p><a href="https://www.example.com/">Regular link</a></p>
+    <p><a href="https://www.amazon.com/dp/B08N5WRWNW">Amazon without affiliate params</a></p>
+    <p><a href="https://news.google.com/">Google News</a></p>
+    
+    <script>
+        console.log('Test page loaded. Use extension to scan for affiliate links.');
+    </script>
+</body>
+</html>
