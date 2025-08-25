@@ -54,28 +54,6 @@ This extension:
 
 ## Development
 
-### Project Structure
-```
-affiliate-link-detector/
-├── manifest.json          # Extension manifest
-├── affiliate-patterns.js  # 🆕 Configurable detection patterns
-├── PATTERNS-README.md     # 🆕 Guide for customizing patterns
-├── popup/
-│   ├── popup.html         # Extension popup UI
-│   └── popup.js           # Popup functionality
-├── content/
-│   ├── detector.js        # Main affiliate detection logic
-│   ├── search-scanner.js  # Search results scanning
-│   ├── styles.css         # Link highlighting styles
-│   └── search-styles.css  # Search page styles
-├── background/
-│   └── background.js      # Background script
-└── icons/
-    ├── icon-16.png        # Extension icons
-    ├── icon-48.png
-    └── icon-128.png
-```
-
 ### Key Components
 
 - **affiliate-patterns.js**: 🆕 Configurable detection patterns (easily customizable!)
