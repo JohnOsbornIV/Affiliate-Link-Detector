@@ -4,7 +4,7 @@ A Firefox extension that detects and highlights affiliate links on web pages and
 
 ## Features
 
-- **Comprehensive Detection**: Accurately identifies Amazon, Georiot, cna.st, and other common affiliate link patterns
+- **Comprehensive Detection**: Identifies Amazon, Georiot, cna.st, and other common affiliate link patterns (including sites that state they earn affiliate commissions)
 - **Search Engine Integration**: Scan DuckDuckGo search results for affiliate links (Google TBD)
 - **Visual Indicators**: Red highlighting and hover tooltips for affiliate links
 - **Search Result Filtering**: Hide search results that contain affiliate links
@@ -28,6 +28,7 @@ A Firefox extension that detects and highlights affiliate links on web pages and
 3. Click "This Firefox".
 4. Click "Load Temporary Add-on".
 5. Select the `manifest.json` file from this repository.
+6. Search and enjoy!
 
 ## Usage
 
