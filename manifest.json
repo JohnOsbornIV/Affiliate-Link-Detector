@@ -8,6 +8,7 @@
     "activeTab",
     "storage",
     "webRequest",
+    "tabs",
     "*://www.google.com/*",
     "*://www.google.co.uk/*",
     "*://www.google.ca/*",

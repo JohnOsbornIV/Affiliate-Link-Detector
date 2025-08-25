@@ -1,13 +1,11 @@
 # Affiliate Link Detector
 
-A Firefox extension that detects and highlights affiliate links on web pages and search results for duckduckgo.com.
-
-This project is in its infancy and likely has issues.
+A Firefox extension that detects and highlights affiliate links on web pages and search results.
 
 ## Features
 
-- **Comprehensive Detection**: Identifies Amazon, Georiot, cna.st, and other common affiliate link patterns (including sites that state they earn affiliate commissions)
-- **Search Engine Integration**: Scan DuckDuckGo search results for affiliate links (Google TBD)
+- **Comprehensive Detection**: Accurately identifies Amazon, Georiot, CNA.st, and other common affiliate link patterns
+- **Search Engine Integration**: Scan Google and DuckDuckGo search results for affiliate links
 - **Visual Indicators**: Red highlighting and hover tooltips for affiliate links
 - **Search Result Filtering**: Hide search results that contain affiliate links
 - **Clean UI**: Orange-themed popup with easy-to-use controls
@@ -19,23 +17,28 @@ This project is in its infancy and likely has issues.
 - **Georiot/CNA.st**: Simplified domain-only detection (any URL containing these domains)
 - **Major Networks**: ShareASale, CJ, ClickBank, LinkSynergy, and 20+ others
 
+### New Parameters Added
+- `refdomain` - Domain referral tracking
+- `sharedId` - Shared identifier tracking
+
 ### General Detection
 - Common affiliate parameters (utm_*, ref, affiliate, partner, etc.)
 - Shortened link services (bit.ly, tinyurl, etc.)
 - Retailer-specific patterns (eBay, Best Buy, Walmart, Target, etc.)
 
 ## Installation
-1. Clone this repository.
-2. Open Firefox and navigate to `about:debugging`
-3. Click "This Firefox".
-4. Click "Load Temporary Add-on".
-5. Select the `manifest.json` file from this repository.
-6. Search and enjoy!
+
+1. Open Firefox and navigate to `about:debugging`
+2. Click "This Firefox"
+3. Click "Load Temporary Add-on"
+4. Select the `manifest.json` file from this directory
 
 ## Usage
 
 ### Basic Scanning
-Once a duckduckgo search query is returned, an orange banner will populate and asist you in identifying search results that contain affiliate links.
+1. Click the orange extension button in the toolbar
+2. Click "Scan Current Page" to detect affiliate links on the current page
+3. Use "Highlight Links" to visually mark detected affiliate links
 
 ### Search Result Scanning
 1. Perform a search on Google or DuckDuckGo
@@ -56,11 +59,33 @@ This extension:
 
 ## Development
 
+### Project Structure
+```
+affiliate-link-detector/
+├── manifest.json          # Extension manifest
+├── affiliate-patterns.js  # 🆕 Configurable detection patterns
+├── PATTERNS-README.md     # 🆕 Guide for customizing patterns
+├── popup/
+│   ├── popup.html         # Extension popup UI
+│   └── popup.js           # Popup functionality
+├── content/
+│   ├── detector.js        # Main affiliate detection logic
+│   ├── search-scanner.js  # Search results scanning
+│   ├── styles.css         # Link highlighting styles
+│   └── search-styles.css  # Search page styles
+├── background/
+│   └── background.js      # Background script
+└── icons/
+    ├── icon-16.png        # Extension icons
+    ├── icon-48.png
+    └── icon-128.png
+```
+
 ### Key Components
 
 - **affiliate-patterns.js**: 🆕 Configurable detection patterns (easily customizable!)
 - **detector.js**: Core affiliate link detection engine
-- **search-scanner.js**: Handles DuckDuckGo search result analysis  
+- **search-scanner.js**: Handles Google/DuckDuckGo search result analysis  
 - **popup.js**: Extension popup interface and controls
 - **background.js**: URL scanning and cross-page functionality
 
@@ -75,4 +100,4 @@ Want to add your own affiliate detection rules? Check out `PATTERNS-README.md` f
 
 ## License
 
-GNUv3 License - feel free to modify and distribute.
+MIT License - feel free to modify and distribute.
