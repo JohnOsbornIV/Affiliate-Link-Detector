@@ -2,6 +2,8 @@
 
 A Firefox extension that detects and highlights affiliate links on web pages and search results for duckduckgo.com.
 
+This project is in its infancy and likely has issues.
+
 ## Features
 
 - **Comprehensive Detection**: Identifies Amazon, Georiot, cna.st, and other common affiliate link patterns (including sites that state they earn affiliate commissions)
