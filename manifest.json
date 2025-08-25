@@ -28,7 +28,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content/detector.js"],
+      "js": ["affiliate-patterns.js", "content/detector.js"],
       "css": ["content/styles.css"],
       "run_at": "document_idle"
     },
@@ -40,7 +40,7 @@
         "*://www.google.com.au/search*",
         "*://duckduckgo.com/*"
       ],
-      "js": ["content/search-scanner.js"],
+      "js": ["affiliate-patterns.js", "content/search-scanner.js"],
       "css": ["content/search-styles.css"],
       "run_at": "document_idle"
     }

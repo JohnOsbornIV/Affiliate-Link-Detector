@@ -14,9 +14,12 @@ A Firefox extension that detects and highlights affiliate links on web pages and
 
 ### High-Accuracy Detection
 - **Amazon**: Associates tags, shortened links (amzn.to, a.co), ref parameters
-- **Georiot**: Direct domains and geni.us short links
-- **CNA.st**: All redirect patterns
+- **Georiot/CNA.st**: Simplified domain-only detection (any URL containing these domains)
 - **Major Networks**: ShareASale, CJ, ClickBank, LinkSynergy, and 20+ others
+
+### New Parameters Added
+- `refdomain` - Domain referral tracking
+- `sharedId` - Shared identifier tracking
 
 ### General Detection
 - Common affiliate parameters (utm_*, ref, affiliate, partner, etc.)
@@ -60,6 +63,8 @@ This extension:
 ```
 affiliate-link-detector/
 ├── manifest.json          # Extension manifest
+├── affiliate-patterns.js  # 🆕 Configurable detection patterns
+├── PATTERNS-README.md     # 🆕 Guide for customizing patterns
 ├── popup/
 │   ├── popup.html         # Extension popup UI
 │   └── popup.js           # Popup functionality
@@ -78,10 +83,20 @@ affiliate-link-detector/
 
 ### Key Components
 
-- **detector.js**: Core affiliate link detection with comprehensive regex patterns
-- **search-scanner.js**: Handles Google/DuckDuckGo search result analysis
+- **affiliate-patterns.js**: 🆕 Configurable detection patterns (easily customizable!)
+- **detector.js**: Core affiliate link detection engine
+- **search-scanner.js**: Handles Google/DuckDuckGo search result analysis  
 - **popup.js**: Extension popup interface and controls
 - **background.js**: URL scanning and cross-page functionality
+
+## 🎛️ Customization
+
+Want to add your own affiliate detection rules? Check out `PATTERNS-README.md` for a complete guide on:
+
+- Adding custom domains to always flag
+- Adding new affiliate parameters
+- Customizing detection behavior
+- Testing your changes
 
 ## License
 

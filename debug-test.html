@@ -60,6 +60,9 @@
             'https://www.amazon.com/dp/B08N5WRWNW?tag=testaffiliate-20',
             'https://amzn.to/3xyz123',
             'https://geni.us/coffeegrinder123',
+            'https://example.com/product?affiliate_id=test123',
+            'https://store.com/item?aff=partner123',
+            'https://shop.com/product?utm_source=affiliate',
             'https://www.tomsguide.com/best-picks/best-coffee-grinder',
             'https://www.williams-sonoma.com/products/coffee-grinder/'
         ];
@@ -89,7 +92,7 @@
                 if (/^https?:\/\/geni\.us\//i.test(href)) return { type: 'georiot', confidence: 'high' };
                 
                 // General affiliate
-                if (/[?&](affiliate|aff|partner|ref|utm_source)/i.test(search)) return { type: 'general', confidence: 'medium' };
+                if (/[?&](affiliate|aff|aff_id|affiliate_id|partner|partner_id|ref|referer|referrer|source|utm_source|utm_medium|utm_campaign|utm_content|click_id|clickid|campaign|cid|sid|subid|sub_id|irclickid|u1|subId|pubRef|affid|afflnk|awesm|click|ck|promo|promocode|referral|sponsor)=/i.test(search)) return { type: 'general', confidence: 'medium' };
                 
                 return null;
             } catch (e) {
